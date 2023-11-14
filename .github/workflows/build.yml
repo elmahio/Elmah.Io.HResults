@@ -28,5 +28,5 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release src/Elmah.Io.HResults/Elmah.Io.HResults.csproj /p:Version=1.0.${{ github.run_number }}
     - name: Push
-      run: dotnet nuget push Elmah.Io.HResults.1.0.${{ github.run_number }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Elmah.Io.HResults/bin/Release/Elmah.Io.HResults.1.0.${{ github.run_number }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
       if: ${{ github.event_name == 'push' }}
