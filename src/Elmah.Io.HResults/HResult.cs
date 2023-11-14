@@ -2,8 +2,14 @@
 
 namespace Elmah.Io.HResults
 {
+    /// <summary>
+    /// Represents a parsed HResult.
+    /// </summary>
     public class HResult
     {
+        /// <summary>
+        /// Parse an integer to a HResult. The method will (unless an exception is thrown) always return a result.
+        /// </summary>
         public static HResult Parse(int i)
         {
             var hresult = new HResult();
@@ -16,9 +22,24 @@ namespace Elmah.Io.HResults
             return hresult;
         }
 
+        /// <summary>
+        /// Indicates if the HResult is a failure or not.
+        /// </summary>
         public bool IsFailure { get; set; }
+
+        /// <summary>
+        /// Identifies the part of the system for which the HResult applies.
+        /// </summary>
         public string? Facility { get; set; }
+
+        /// <summary>
+        /// The parsed Hex code from the HResult.
+        /// </summary>
         public string? Hex { get; set; }
+
+        /// <summary>
+        /// Identifies a particular condition in the context of the facility.
+        /// </summary>
         public string? ErrorCode { get; set; }
     }
 }
