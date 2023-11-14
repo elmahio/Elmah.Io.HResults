@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0C7359AC-5570-445C-8190-955B75912683}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0E836674-F4A4-4105-A716-A4CFFCBCEB0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.HResults", "src\Elmah.Io.HResults\Elmah.Io.HResults.csproj", "{5152AE06-9758-4A33-AABF-D50C839972EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elmah.Io.HResults.Test", "test\Elmah.Io.HResults.Test\Elmah.Io.HResults.Test.csproj", "{CF9C282F-CA55-4613-9F72-E47C8CB95827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0DA50D5F-6C31-41A4-9CB4-C2AA0EF9A940}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5152AE06-9758-4A33-AABF-D50C839972EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5152AE06-9758-4A33-AABF-D50C839972EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5152AE06-9758-4A33-AABF-D50C839972EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5152AE06-9758-4A33-AABF-D50C839972EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9C282F-CA55-4613-9F72-E47C8CB95827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9C282F-CA55-4613-9F72-E47C8CB95827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9C282F-CA55-4613-9F72-E47C8CB95827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9C282F-CA55-4613-9F72-E47C8CB95827}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5152AE06-9758-4A33-AABF-D50C839972EC} = {0C7359AC-5570-445C-8190-955B75912683}
+		{CF9C282F-CA55-4613-9F72-E47C8CB95827} = {0E836674-F4A4-4105-A716-A4CFFCBCEB0C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFA19A39-BCC3-43E2-8BA9-93AC3AD501E9}
+	EndGlobalSection
+EndGlobal
