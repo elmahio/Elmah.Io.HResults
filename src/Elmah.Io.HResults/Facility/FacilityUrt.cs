@@ -13,7 +13,7 @@
                 case 5632: return "COR_E_APPLICATION";
             }
 
-            return null;
+            return $"{errorCode}";
         }
     }
 }
