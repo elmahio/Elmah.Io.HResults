@@ -6,7 +6,7 @@ namespace Elmah.Io.HResults.Facility
     {
         private static readonly Dictionary<int, FacilityBase> facilities = new Dictionary<int, FacilityBase>
         {
-            { 19, new FacilityUrt() }
+            { 19, new FacilityUrt() }, { 7, new FacilityWin32() }
         };
 
         internal static string? ErrorCodeToString(int facility, int errorCode)
@@ -27,7 +27,6 @@ namespace Elmah.Io.HResults.Facility
                 case 2: return "FACILITY_DISPATCH";
                 case 3: return "FACILITY_STORAGE";
                 case 4: return "FACILITY_ITF";
-                case 7: return "FACILITY_WIN32";
                 case 8: return "FACILITY_WINDOWS";
                 case 9: return "FACILITY_SECURITY";
                 case 10: return "FACILITY_CONTROL";
