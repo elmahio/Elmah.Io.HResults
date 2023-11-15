@@ -1,6 +1,4 @@
-﻿using Elmah.Io.HResults.Facility;
-
-namespace Elmah.Io.HResults
+﻿namespace Elmah.Io.HResults
 {
     /// <summary>
     /// Represents a parsed HResult.
@@ -13,12 +11,13 @@ namespace Elmah.Io.HResults
         public static HResult Parse(int i)
         {
             var hresult = new HResult();
-            hresult.IsFailure = (i & 0x80000000) != 0;
+            var isFailure = (i & 0x80000000) != 0;
+            hresult.IsFailure = isFailure;
             var facility = (i & 0x7FFF0000) >> 16;
-            hresult.Facility = Facilities.FacilityToString(facility);
+            hresult.Facility = facility.ToFacility();
             hresult.Hex = $"0x{i.ToString("X8")}";
-            var errorCode = (i & 0xFFFF);
-            hresult.ErrorCode = Facilities.ErrorCodeToString(facility, errorCode);
+            var code = (i & 0xFFFF);
+            hresult.Code = code.ToCode(isFailure, facility);
             return hresult;
         }
 
@@ -30,7 +29,7 @@ namespace Elmah.Io.HResults
         /// <summary>
         /// Identifies the part of the system for which the HResult applies.
         /// </summary>
-        public string? Facility { get; set; }
+        public Facility Facility { get; set; }
 
         /// <summary>
         /// The parsed Hex code from the HResult.
@@ -40,6 +39,7 @@ namespace Elmah.Io.HResults
         /// <summary>
         /// Identifies a particular condition in the context of the facility.
         /// </summary>
-        public string? ErrorCode { get; set; }
+        public Code Code { get; set; }
+
     }
 }
