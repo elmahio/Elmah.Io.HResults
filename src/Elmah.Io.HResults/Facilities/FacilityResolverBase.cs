@@ -1,5 +1,6 @@
 ﻿namespace Elmah.Io.HResults.Facilities
 {
+    // Thank you https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/705fb797-2175-4a90-b5a3-3918024b10b8
     internal abstract class FacilityResolverBase
     {
         public int Identifier { get; set; }
