@@ -45,16 +45,17 @@ namespace Elmah.Io.HResults.Test
         [Test]
         public void CanParseUnknown()
         {
-            var res = HResult.Parse(-2147467259);
+            var i = int.Parse("80004006", NumberStyles.HexNumber);
+            var res = HResult.Parse(-2147467258);
             Assert.IsNotNull(res);
-            Assert.That(res.Hex, Is.EqualTo("0x80004005"));
+            Assert.That(res.Hex, Is.EqualTo("0x80004006"));
             Assert.That(res.IsFailure, Is.True);
             Assert.That(res.Facility, Is.Not.Null);
             Assert.That(res.Facility.Identifier, Is.EqualTo(0));
             Assert.That(res.Facility.Name, Is.EqualTo("FACILITY_NULL"));
             Assert.That(res.Code, Is.Not.Null);
-            Assert.That(res.Code.Identifier, Is.EqualTo(16389));
-            Assert.That(res.Code.Name, Is.EqualTo("16389"));
+            Assert.That(res.Code.Identifier, Is.EqualTo(16390));
+            Assert.That(res.Code.Name, Is.EqualTo("16390"));
         }
 
         [Test]
