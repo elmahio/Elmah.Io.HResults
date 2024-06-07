@@ -1,6 +1,5 @@
 ﻿using Elmah.Io.HResults.Facilities;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Elmah.Io.HResults
 {
@@ -20,19 +19,20 @@ namespace Elmah.Io.HResults
 
         internal static Code ToCode(this int code, bool failure, int facility)
         {
-            var resolver = facilityResolvers.FirstOrDefault(fr => fr.Identifier == facility);
+            var resolver = facilityResolvers.Find(fr => fr.Identifier == facility);
             if (resolver != null) return resolver.Resolve(failure, code);
 
-            return new Code(code, $"{code}");
+            return new Code(code, $"{code}", isMatch: false);
         }
 
         internal static Facility ToFacility(this int facility)
         {
-            var resolver = facilityResolvers.FirstOrDefault(fr => fr.Identifier == facility);
+            var resolver = facilityResolvers.Find(fr => fr.Identifier == facility);
             if (resolver != null) return resolver.Facility();
 
             switch (facility)
             {
+
                 case 10: return new Facility(facility, "FACILITY_CONTROL");
                 case 12: return new Facility(facility, "FACILITY_INTERNET");
                 case 14: return new Facility(facility, "FACILITY_MSMQ");
@@ -62,9 +62,8 @@ namespace Elmah.Io.HResults
                 case 61: return new Facility(facility, "FACILITY_WEBSERVICES");
                 case 80: return new Facility(facility, "FACILITY_WINDOWS_DEFENDER");
                 case 81: return new Facility(facility, "FACILITY_OPC");
+                default: return new Facility(facility, $"{facility}", isMatch: false);
             }
-
-            return facilityResolvers.First(fr => fr.Identifier == 0).Facility();
         }
     }
 }

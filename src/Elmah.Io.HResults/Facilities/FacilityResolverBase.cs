@@ -25,7 +25,7 @@
 
         protected Code Unknown(int code)
         {
-            return new Code(code, $"{code}");
+            return new Code(code, $"{code}", isMatch: false);
         }
     }
 }

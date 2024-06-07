@@ -5,11 +5,12 @@
     /// </summary>
     public class Code
     {
-        internal Code(int identifier, string name, string? description = null)
+        internal Code(int identifier, string name, string? description = null, bool isMatch = true)
         {
             Identifier = identifier;
             Name = name;
             Description = description;
+            IsMatch = isMatch;
         }
 
         /// <summary>
@@ -26,5 +27,11 @@
         /// A potential description of the code.
         /// </summary>
         public string? Description { get; set; }
+
+        /// <summary>
+        /// Indicate if Elmah.Io.HResults were able to find a known match to this code.
+        /// In case no match is found, the integer code value will be used as the name.
+        /// </summary>
+        public bool IsMatch { get; set; }
     }
 }
