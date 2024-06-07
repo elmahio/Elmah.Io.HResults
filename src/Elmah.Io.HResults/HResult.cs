@@ -5,6 +5,13 @@
     /// </summary>
     public class HResult
     {
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private HResult()
+        {
+            // Only the Parse method should ever create a new HResult
+        }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
         /// <summary>
         /// Parse an integer to a HResult. The method will (unless an exception is thrown) always return a result.
         /// </summary>
@@ -15,7 +22,7 @@
             hresult.IsFailure = isFailure;
             var facility = (i & 0x7FFF0000) >> 16;
             hresult.Facility = facility.ToFacility();
-            hresult.Hex = $"0x{i.ToString("X8")}";
+            hresult.Hex = $"0x{i:X8}";
             var code = (i & 0xFFFF);
             hresult.Code = code.ToCode(isFailure, facility);
             return hresult;
