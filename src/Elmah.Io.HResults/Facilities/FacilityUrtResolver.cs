@@ -1096,6 +1096,8 @@
                 5376 => new Code(code, "COR_E_EXCEPTION"),
                 4167 => new Code(code, "FUSION_E_INVALID_NAME", "The given assembly name or codebase was invalid."),
                 4359 => new Code(code, "CLDB_E_FILE_OLDVER", "Old version error."),
+                6402 => Unknown(code), // A configuration error but not documented anywhere
+                6460 => Unknown(code), // This is a known code from Entity Framework but Microsoft won't document it: https://github.com/dotnet/ef6/issues/2259#issuecomment-2169658411
                 _ => Unknown(code),
             };
         }
