@@ -1,6 +1,8 @@
 namespace Elmah.Io.HResults.Facilities
 {
-    // Thank you https://learn.microsoft.com/en-us/windows/win32/com/error-handling-strategies
+    // Sources:
+    // - https://learn.microsoft.com/en-us/windows/win32/com/error-handling-strategies
+    // - https://learn.microsoft.com/en-us/dotnet/api/system.reflection.ambiguousmatchexception
     internal class FacilityNullResolver : FacilityResolverBase
     {
         public FacilityNullResolver() : base(0, "FACILITY_NULL")
@@ -29,6 +31,7 @@ namespace Elmah.Io.HResults.Facilities
                 10 => new Code(code, "E_PENDING", "The data necessary to complete the operation is not yet available."),
                 14 => new Code(code, "E_OUTOFMEMORY", "The method failed to allocate necessary memory."),
                 87 => new Code(code, "E_INVALIDARG", "One or more arguments are invalid."),
+                8477 => new Code(code, "COR_E_AMBIGUOUSMATCH"),
                 16385 => new Code(code, "E_NOTIMPL", "The method is not implemented."),
                 16386 => new Code(code, "E_NOINTERFACE", "The QueryInterface method did not recognize the requested interface. The interface is not supported."),
                 16387 => new Code(code, "E_POINTER", "An invalid pointer was used."),
