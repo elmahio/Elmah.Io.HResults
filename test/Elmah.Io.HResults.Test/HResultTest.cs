@@ -6,6 +6,16 @@ namespace Elmah.Io.HResults.Test
 {
     public class HResultTest
     {
+        [TestCase("FACILITY_CONTROL", "CTL_E_ILLEGALFUNCTIONCALL", -2146828283)]
+        public void CanParseFacility(string expectedFacitliy, string expectedCode, int hresult)
+        {
+            var res = HResult.Parse(hresult);
+            Assert.That(res.Facility.IsMatch);
+            Assert.That(res.Facility.Name, Is.EqualTo(expectedFacitliy));
+            Assert.That(res.Code.IsMatch);
+            Assert.That(res.Code.Name, Is.EqualTo(expectedCode));
+        }
+
         [Test]
         public void CanParseKnownUrt()
         {

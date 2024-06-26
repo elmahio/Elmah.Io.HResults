@@ -14,7 +14,7 @@ namespace Elmah.Io.HResults
             new FacilityScardResolver(), new FacilitySecurityResolver(), new FacilitySetupapiResolver(),
             new FacilityStorageResolver(), new FacilityTpmServicesResolver(), new FacilityTpmSoftwareResolver(),
             new FacilityUrtResolver(), new FacilityUsermodeFilterManagerResolver(), new FacilityWin32Resolver(),
-            new FacilityWindowsResolver(),
+            new FacilityWindowsResolver(), new FacilityControlResolver()
         };
 
         internal static Code ToCode(this int code, bool failure, int facility)
@@ -32,7 +32,6 @@ namespace Elmah.Io.HResults
 
             return facility switch
             {
-                10 => new Facility(facility, "FACILITY_CONTROL"),
                 12 => new Facility(facility, "FACILITY_INTERNET"),
                 14 => new Facility(facility, "FACILITY_MSMQ"),
                 18 => new Facility(facility, "FACILITY_AAF"),
