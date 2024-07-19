@@ -14,7 +14,7 @@ namespace Elmah.Io.HResults
             new FacilityScardResolver(), new FacilitySecurityResolver(), new FacilitySetupapiResolver(),
             new FacilityStorageResolver(), new FacilityTpmServicesResolver(), new FacilityTpmSoftwareResolver(),
             new FacilityUrtResolver(), new FacilityUsermodeFilterManagerResolver(), new FacilityWin32Resolver(),
-            new FacilityWindowsResolver(), new FacilityControlResolver()
+            new FacilityWindowsResolver(), new FacilityControlResolver(), new FacilityWincodecDwriteDwmResolver()
         };
 
         internal static Code ToCode(this int code, bool failure, int facility)
