@@ -20,7 +20,7 @@
             var hresult = new HResult();
             var isFailure = (i & 0x80000000) != 0;
             hresult.IsFailure = isFailure;
-            var facility = (i & 0x7FFF0000) >> 16;
+            var facility = (i >> 16) & 0x1FFF;
             hresult.Facility = facility.ToFacility();
             hresult.Hex = $"0x{i:X8}";
             var code = (i & 0xFFFF);
