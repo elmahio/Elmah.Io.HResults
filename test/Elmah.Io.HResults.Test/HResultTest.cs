@@ -9,6 +9,7 @@ namespace Elmah.Io.HResults.Test
         [TestCase(-2147024894, "0x80070002", 7, "FACILITY_WIN32", 2, "ERROR_FILE_NOT_FOUND")]
         [TestCase(-2146232832, "0x80131600", 19, "FACILITY_URT", 5632, "COR_E_APPLICATION")]
         [TestCase(-2146828283, "0x800A0005", 10, "FACILITY_CONTROL", 5, "CTL_E_ILLEGALFUNCTIONCALL")]
+        [TestCase(-1072896680, "0xC00CE558", 12, "FACILITY_INTERNET", 58712, "XML_E_MISSINGROOT")]
         public void CanParseKnownFailure(int hresult, string expectedHex, int expectedFacilityCode, string expectedFacilityName, int expectedCode, string expectedName)
         {
             var res = HResult.Parse(hresult);
