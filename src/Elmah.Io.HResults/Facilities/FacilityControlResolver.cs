@@ -56,6 +56,7 @@ namespace Elmah.Io.HResults.Facilities
                 735 => new Code(code, "CTL_E_CANTSAVEFILETOTEMP"),
                 744 => new Code(code, "CTL_E_SEARCHTEXTNOTFOUND"),
                 746 => new Code(code, "CTL_E_REPLACEMENTSTOOLONG"),
+                1004 => Unknown(code), // Typically a COM exception when dealing with Excel. It's not documented anywhere so return Unknown.
                 _ => Unknown(code),
             };
         }
