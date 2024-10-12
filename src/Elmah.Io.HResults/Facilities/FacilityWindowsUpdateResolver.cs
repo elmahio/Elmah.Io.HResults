@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using static System.Net.WebRequestMethods;
-
-namespace Elmah.Io.HResults.Facilities
+﻿namespace Elmah.Io.HResults.Facilities
 {
     internal class FacilityWindowsUpdateResolver : FacilityResolverBase
     {
