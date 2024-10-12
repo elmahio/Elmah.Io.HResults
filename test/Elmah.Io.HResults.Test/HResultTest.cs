@@ -14,26 +14,21 @@ namespace Elmah.Io.HResults.Test
         public void CanParseKnownFailure(int hresult, string expectedHex, int expectedFacilityCode, string expectedFacilityName, int expectedCode, string expectedName)
         {
             var res = HResult.Parse(hresult);
-            Assert.IsNotNull(res);
-            Assert.That(res.Hex, Is.EqualTo(expectedHex));
-            Assert.That(res.IsFailure, Is.True);
-            Assert.That(res.Facility, Is.Not.Null);
-            Assert.That(res.Facility.Identifier, Is.EqualTo(expectedFacilityCode));
-            Assert.That(res.Facility.Name, Is.EqualTo(expectedFacilityName));
-            Assert.That(res.Facility.IsMatch, Is.True);
-            Assert.That(res.Code, Is.Not.Null);
-            Assert.That(res.Code.Identifier, Is.EqualTo(expectedCode));
-            Assert.That(res.Code.Name, Is.EqualTo(expectedName));
-            Assert.That(res.Code.IsMatch, Is.True);
+            AssertHResult(expectedHex, true, expectedFacilityCode, expectedFacilityName, expectedCode, expectedName, res);
         }
 
         [TestCase(2359297, "0x00240001", 36, "FACILITY_WINDOWSUPDATE", 1, "WU_S_SERVICE_STOP")]
         public void CanParseKnownSuccess(int hresult, string expectedHex, int expectedFacilityCode, string expectedFacilityName, int expectedCode, string expectedName)
         {
             var res = HResult.Parse(hresult);
+            AssertHResult(expectedHex, false, expectedFacilityCode, expectedFacilityName, expectedCode, expectedName, res);
+        }
+
+        private static void AssertHResult(string expectedHex, bool expectedIsFailure, int expectedFacilityCode, string expectedFacilityName, int expectedCode, string expectedName, HResult res)
+        {
             Assert.IsNotNull(res);
             Assert.That(res.Hex, Is.EqualTo(expectedHex));
-            Assert.That(res.IsFailure, Is.False);
+            Assert.That(res.IsFailure, Is.EqualTo(expectedIsFailure));
             Assert.That(res.Facility, Is.Not.Null);
             Assert.That(res.Facility.Identifier, Is.EqualTo(expectedFacilityCode));
             Assert.That(res.Facility.Name, Is.EqualTo(expectedFacilityName));
