@@ -15,7 +15,7 @@ namespace Elmah.Io.HResults
             new FacilityStorageResolver(), new FacilityTpmServicesResolver(), new FacilityTpmSoftwareResolver(),
             new FacilityUrtResolver(), new FacilityUsermodeFilterManagerResolver(), new FacilityWin32Resolver(),
             new FacilityWindowsResolver(), new FacilityControlResolver(), new FacilityWincodecDwriteDwmResolver(),
-            new FacilityInternetResolver()
+            new FacilityInternetResolver(), new FacilityWindowsUpdateResolver()
         };
 
         internal static Code ToCode(this int code, bool failure, int facility)
@@ -47,7 +47,6 @@ namespace Elmah.Io.HResults
                 33 => new Facility(facility, "FACILITY_CONFIGURATION"),
                 34 => new Facility(facility, "FACILITY_STATE_MANAGEMENT"),
                 35 => new Facility(facility, "FACILITY_METADIRECTORY"),
-                36 => new Facility(facility, "FACILITY_WINDOWSUPDATE"),
                 37 => new Facility(facility, "FACILITY_DIRECTORYSERVICE"),
                 39 => new Facility(facility, "FACILITY_SHELL"),
                 51 => new Facility(facility, "FACILITY_WINRM"),
