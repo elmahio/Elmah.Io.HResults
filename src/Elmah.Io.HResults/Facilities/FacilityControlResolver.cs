@@ -57,6 +57,7 @@ namespace Elmah.Io.HResults.Facilities
                 744 => new Code(code, "CTL_E_SEARCHTEXTNOTFOUND"),
                 746 => new Code(code, "CTL_E_REPLACEMENTSTOOLONG"),
                 1004 => Unknown(code), // Typically a COM exception when dealing with Excel. It's not documented anywhere so return Unknown.
+                4198 => Unknown(code), // Typically a COM exception when dealing with Word. It's not documented anywhere so return Unknown.
                 50290 => new Code(code, "VBA_E_IGNORE", "This error is specific to interactions with Visual Basic for Applications (VBA) and typically indicates that the error is being ignored by the system or the automation process."), // https://learn.microsoft.com/en-us/archive/msdn-technet-forums/9168f9f2-e5bc-4535-8d7d-4e374ab8ff09
                 _ => Unknown(code),
             };
