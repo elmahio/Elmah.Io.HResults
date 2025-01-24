@@ -219,6 +219,7 @@ namespace Elmah.Io.HResults.Facilities
                 351 => new Code(code, "ERROR_FAIL_SHUTDOWN", "The shutdown operation failed."),
                 352 => new Code(code, "ERROR_FAIL_RESTART", "The restart operation failed."),
                 353 => new Code(code, "ERROR_MAX_SESSIONS_REACHED", "The maximum number of sessions has been reached."),
+                362 => new Code(code, "ERROR_CLOUD_FILE_PROVIDER_NOT_RUNNING", "The cloud file provider is not running."),
                 400 => new Code(code, "ERROR_THREAD_MODE_ALREADY_BACKGROUND", "The thread is already in background processing mode."),
                 401 => new Code(code, "ERROR_THREAD_MODE_NOT_BACKGROUND", "The thread is not in background processing mode."),
                 402 => new Code(code, "ERROR_PROCESS_MODE_ALREADY_BACKGROUND", "The process is already in background processing mode."),

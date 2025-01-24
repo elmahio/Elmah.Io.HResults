@@ -11,6 +11,7 @@ namespace Elmah.Io.HResults.Test
         [TestCase(-2146828283, "0x800A0005", 10, "FACILITY_CONTROL", 5, "CTL_E_ILLEGALFUNCTIONCALL")]
         [TestCase(-1072896680, "0xC00CE558", 12, "FACILITY_INTERNET", 58712, "XML_E_MISSINGROOT")]
         [TestCase(-2145067009, "0x8024DFFF", 36, "FACILITY_WINDOWSUPDATE", 57343, "WU_E_SETUP_UNEXPECTED")]
+        [TestCase(-2147024534, "0x8007016A", 7, "FACILITY_WIN32", 362, "ERROR_CLOUD_FILE_PROVIDER_NOT_RUNNING")]
         public void CanParseKnownFailure(int hresult, string expectedHex, int expectedFacilityCode, string expectedFacilityName, int expectedCode, string expectedName)
         {
             var res = HResult.Parse(hresult);
