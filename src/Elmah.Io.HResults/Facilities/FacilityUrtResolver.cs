@@ -1009,6 +1009,7 @@
                 6387 => new Code(code, "VER_E_TYPELOAD"),
                 6388 => new Code(code, "VER_E_PE_LOAD"),
                 6389 => new Code(code, "VER_E_WRITE_RVA_STATIC"),
+                6401 => new Code(code, code.ToString(), "Represents the exception thrown when a component cannot be granted a license."),
                 6464 => new Code(code, "COR_E_Xml"),
                 6465 => new Code(code, "COR_E_XmlSchema"),
                 6466 => new Code(code, "COR_E_XmlXslt"),
