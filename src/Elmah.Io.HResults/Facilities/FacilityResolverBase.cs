@@ -23,7 +23,7 @@
             return Unknown(code);
         }
 
-        protected Code Unknown(int code)
+        protected static Code Unknown(int code)
         {
             return new Code(code, $"{code}", isMatch: false);
         }
