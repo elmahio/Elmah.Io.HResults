@@ -27,7 +27,7 @@ namespace Elmah.Io.HResults.Test
 
         private static void AssertHResult(string expectedHex, bool expectedIsFailure, int expectedFacilityCode, string expectedFacilityName, int expectedCode, string expectedName, HResult res)
         {
-            Assert.IsNotNull(res);
+            Assert.That(res, Is.Not.Null);
             Assert.That(res.Hex, Is.EqualTo(expectedHex));
             Assert.That(res.IsFailure, Is.EqualTo(expectedIsFailure));
             Assert.That(res.Facility, Is.Not.Null);
@@ -44,7 +44,7 @@ namespace Elmah.Io.HResults.Test
         public void CanParseUnknown()
         {
             var res = HResult.Parse(-2137124863);
-            Assert.IsNotNull(res);
+            Assert.That(res, Is.Not.Null);
             Assert.That(res.Hex, Is.EqualTo("0x809E1001"));
             Assert.That(res.IsFailure, Is.True);
             Assert.That(res.Facility, Is.Not.Null);
