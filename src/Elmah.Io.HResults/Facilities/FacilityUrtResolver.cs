@@ -2,6 +2,7 @@
 {
     // Sources:
     // - https://github.com/tpn/winsdk-10/blob/master/Include/10.0.14393.0/um/CorError.h
+    // - https://github.com/DavoudEshtehari/SqlClient/blob/0dc60ad6b36d38e52fda56d8c3d1071b0ec4266a/src/Microsoft.Data.SqlClient/netfx/src/Misc/HResults.cs#L75
     internal class FacilityUrtResolver : FacilityResolverBase
     {
         public FacilityUrtResolver() : base(19, "FACILITY_URT")
@@ -1009,7 +1010,7 @@
                 6387 => new Code(code, "VER_E_TYPELOAD"),
                 6388 => new Code(code, "VER_E_PE_LOAD"),
                 6389 => new Code(code, "VER_E_WRITE_RVA_STATIC"),
-                6401 => new Code(code, code.ToString(), "Represents the exception thrown when a component cannot be granted a license."),
+                6401 => new Code(code, "License", "Represents the exception thrown when a component cannot be granted a license."),
                 6464 => new Code(code, "COR_E_Xml"),
                 6465 => new Code(code, "COR_E_XmlSchema"),
                 6466 => new Code(code, "COR_E_XmlXslt"),
@@ -1097,8 +1098,15 @@
                 5376 => new Code(code, "COR_E_EXCEPTION"),
                 4167 => new Code(code, "FUSION_E_INVALID_NAME", "The given assembly name or codebase was invalid."),
                 4359 => new Code(code, "CLDB_E_FILE_OLDVER", "Old version error."),
-                6402 => Unknown(code), // A configuration error but not documented anywhere
-                6460 => Unknown(code), // This is a known code from Entity Framework but Microsoft won't document it: https://github.com/dotnet/ef6/issues/2259#issuecomment-2169658411
+                6402 => new Code(code, "Configuration"),
+                6457 => new Code(code, "Metadata"),
+                6458 => new Code(code, "InvalidQuery"),
+                6459 => new Code(code, "CommandCompilation"),
+                6460 => new Code(code, "CommandExecution"),
+                6461 => new Code(code, "ConnectionPlanException"),
+                6405 => new Code(code, "InternalBufferOverflow"),
+                6406 => new Code(code, "ServiceControllerTimeout"),
+                6407 => new Code(code, "Install"),
                 _ => Unknown(code),
             };
         }
