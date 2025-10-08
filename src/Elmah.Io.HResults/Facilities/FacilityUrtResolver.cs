@@ -1107,6 +1107,7 @@
                 6405 => new Code(code, "InternalBufferOverflow"),
                 6406 => new Code(code, "ServiceControllerTimeout"),
                 6407 => new Code(code, "Install"),
+                8198 => new Code(code, $"{code}", "Could not load file or assembly. The assembly architecture is not compatible with the current process architecture."),
                 _ => Unknown(code),
             };
         }
